@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:17:54 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/09 17:19:42 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/09 17:29:34 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ typedef struct philo
 }t_ph;
 
 //libft_function 
-int	ft_atoi(const char *str);
+int	    ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
-
+int	    is_all_digit(char *str);
 #endif
