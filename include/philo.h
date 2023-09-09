@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:17:54 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/09 17:29:34 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/09 18:23:06 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,21 @@ typedef struct philo
     pthread_t ph_thrd;
 }t_ph;
 
+//handling time ..
+long long	take_time(void);
+long long	curr_time(t_ph *phil);
+void	slp_time(long long time);
+
+
 //libft_function 
-int	    ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);
-int	    is_all_digit(char *str);
+int		is_all_digit(char *str);
+
+//lst utils (create node - add last )
+t_ph	*new_ph_nd(philo_inf *phil, int id_ph);
+t_ph	*last_ph(t_ph *phil);
+void	ft_lst_add_last_ph(t_ph **lst, t_ph *nw_ph);
+
 #endif

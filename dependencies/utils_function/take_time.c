@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   just_all_digit.c                                   :+:      :+:    :+:   */
+/*   take_time.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 17:28:04 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/09 17:41:47 by shamsate         ###   ########.fr       */
+/*   Created: 2023/09/09 17:53:41 by shamsate          #+#    #+#             */
+/*   Updated: 2023/09/09 18:04:58 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/philo.h"
 
-int	ft_isdigit(int c)
+long long   take_time(void)
 {
-	return (c >= '0' && c <= '9');
+    struct timeval  time;
+
+    gettimeofday(&time, NULL);
+    return (time.tv_sec * 1000 + time.tv_usec / 1000);
 }
 
-int	is_all_digit(char *str)
+long long   curr_time(t_ph *phil)
 {
-	int	i;
+    return (take_time() - phil->inf_ph->t_start);
+}
 
-	i = 0;
-	if (str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
+void    slp_time(long long time)
+{
+    long long srt_time;
+
+    srt_time = take_time();
+    while (take_time() < time + srt_time)
+        usleep(100);
 }
