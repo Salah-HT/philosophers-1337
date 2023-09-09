@@ -6,12 +6,11 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:52:36 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/09 17:11:07 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/09 17:19:08 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/philo.h"
-
 
 int	ft_atoi(const char *str)
 {
