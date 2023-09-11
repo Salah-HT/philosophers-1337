@@ -6,29 +6,25 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:28:04 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/09 18:26:31 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/11 15:19:59 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/philo.h"
 
-int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
-}
+int is_all_digit(char *str) {
+    int i = 0;
 
-int	is_all_digit(char *str)
-{
-	int	i;
+    if (str[i] == '+') {
+        i++;
+    }
 
-	i = 0;
-	if (str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
+    while (str[i]) {
+        if (!(str[i] >= '0' && str[i] <= '9')) {
+            return 0;
+        }
+        i++;
+    }
+
+    return 1;
 }
