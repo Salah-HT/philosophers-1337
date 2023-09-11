@@ -6,11 +6,11 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 16:08:28 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/11 16:53:49 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:04:46 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/philo.h"
+#include "../../../include/philo.h"
 
 // Function to add philosophers to the dining simulation
 t_ph *philo_add(philo_inf *inf_ph) {
