@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:17:54 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/09 18:26:11 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/11 17:22:46 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@
 # include <pthread.h>
 # include <sys/time.h>
 # include <stdint.h>
+
+
+# define ET "\e[1;35mStart Eating 🥘.\033[0m"
+# define TK "\e[1;32mStart Thinking 🧘.\033[0m"
+# define SlP "\e[1;33mStart Sleeping 🛌.\033[0m"
+# define DD "\e[1;31mDied 🆘 .\033[0m"
 
 // struct part :
 typedef struct philo_info
