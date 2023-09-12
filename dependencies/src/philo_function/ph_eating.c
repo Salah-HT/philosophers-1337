@@ -6,16 +6,17 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:06:01 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/11 17:29:32 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/11 23:43:50 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/philo.h"
 
 // Function representing the philosopher's eating action
-void philo_eating(t_ph *_ph) {
+void philo_eating(t_ph *_ph) 
+{
     // Print an eating message using the print_message function
-    print_message(_ph, ET);
+    print_msg(_ph, ET);
 
     // Lock the eating mutex to ensure mutual exclusion
     if (pthread_mutex_lock(&_ph->inf_ph->allow_eat) != 0) {
