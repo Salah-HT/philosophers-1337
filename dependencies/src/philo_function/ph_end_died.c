@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 00:32:55 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/12 01:10:51 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/12 01:33:39 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // Function to check if a philosopher has died
 void has_died(t_ph *ph) 
 {
-    long long current_time_value = current_time(ph);
+    long long current_time_value = curr_time(ph);
 
     // Calculate the time since the last meal
     long long time_since_last_meal = current_time_value - ph->final_eat;

@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:17:54 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/12 01:14:22 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/12 02:08:44 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,15 @@ void philo_take_forks(t_ph *_ph);
 void has_died(t_ph *ph);
 void has_ending_eat(t_ph *ph);
 void has_finished(t_ph *ph);
+void ph_think(t_ph *_ph);
+void *philo_routin(void *arg);
 
 //define Print_msg arguments..
-# define ET "\e[1;35mStart Eating 🥘.\033[0m"
-# define TK "\e[1;32mStart Thinking 🧘.\033[0m"
-# define SlP "\e[1;33mStart Sleeping 🛌.\033[0m"
-# define DD "\e[1;31mDied 🆘 .\033[0m"
-# define L_FORKS "\e[1;30m THE LEFT FORK 🍴Taking.\033[0m"
-# define R_FORKS "\e[1;30m THE RIGHT FORK 🍴 Taking.\033[0m"
+# define ET "\e[1;35m-Start Eating 🥘-.\033[0m"
+# define TK "\e[1;32m-Start Thinking 🧘-.\033[0m"
+# define SLP "\e[1;33m-Start Sleeping 🛌-.\033[0m"
+# define DD "\e[1;31m-Died 🆘-.\033[0m"
+# define L_FORKS "\e[1;30m -THE LEFT FORK 🍴Taking-.\033[0m"
+# define R_FORKS "\e[1;30m -THE RIGHT FORK 🍴 Taking-.\033[0m"
 
 #endif
