@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:17:54 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/12 02:08:44 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/13 14:18:22 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void has_died(t_ph *ph);
 void has_ending_eat(t_ph *ph);
 void has_finished(t_ph *ph);
 void ph_think(t_ph *_ph);
-void *philo_routin(void *arg);
+void *philo_routine(void *arg);
 
 //define Print_msg arguments..
 # define ET "\e[1;35m-Start Eating 🥘-.\033[0m"
@@ -77,5 +77,12 @@ void *philo_routin(void *arg);
 # define DD "\e[1;31m-Died 🆘-.\033[0m"
 # define L_FORKS "\e[1;30m -THE LEFT FORK 🍴Taking-.\033[0m"
 # define R_FORKS "\e[1;30m -THE RIGHT FORK 🍴 Taking-.\033[0m"
+#define NBR_PH "\e[1;33mThe number of philosophers must be > \
+0 and < 200.\033[0m"
+#define T_DIE "\e[1;33mIt's Time for Those Over 60 to Rest.\033[0m"
+#define T_EAT "\e[1;33mSufficient Eating Time Required (More than 60).\033[0m"
+#define T_SLP "\e[1;33mAdequate Sleep Time Needed (Greater than 60).\033[0m"
+#define NBR_EAT "\e[1;33mEating Time Must Be More Than 0.\033[0m"
+
 
 #endif

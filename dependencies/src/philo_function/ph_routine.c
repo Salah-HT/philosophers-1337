@@ -6,15 +6,15 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:04:53 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/12 02:09:21 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/13 15:22:39 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/philo.h"
 
 // Routine function for a philosopher's thread
-void *philo_routin(void *arg)
- {
+void *philo_routine(void *arg)
+{
     t_ph *_ph = (t_ph *)arg;
 
     while (true) {
