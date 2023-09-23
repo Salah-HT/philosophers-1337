@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:17:54 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/23 22:02:36 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/23 22:43:07 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,10 @@ void    	create_thrd(t_ph *philo);
 void 		freeAllMemory(t_ph *ph, philo_inf *philo);
 
 //define Print_msg arguments..
-# define ET "eating"
-# define TK "thinking"
-# define SLP "Sleeping"
-# define DD "died ☠️"
+# define ET "is eating"
+# define TK "is thinking"
+# define SLP "is Sleeping"
+# define DD "is died :( "
 # define L_FORKS "has taking The Left Fork"
 # define R_FORKS "has taking The Right Fork"
 #define NBR_PH "The number Of Philosophers Must Be > \

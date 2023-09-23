@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 00:32:55 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/23 22:06:32 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/23 22:41:58 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void has_died(t_ph *ph) {
             return;
 
         // Print a message indicating that the philosopher has died
-        printf("\e[0;91m%30lld  %d  is %s\n\033[0m",
+        printf("\e[0;91m%30lld  %d  %s\n\033[0m",
             curr_time(ph), ph->ph_id, DD);
 
         // Set the 'test' flag to false, indicating that the philosopher has died
