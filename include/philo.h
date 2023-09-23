@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:17:54 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/13 14:18:22 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/23 22:02:36 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,42 +47,51 @@ typedef struct philo
     pthread_mutex_t forks;
     pthread_t ph_thrd;
 }t_ph;
-//libft_function 
-int		ft_atoi(const char *str);
-int		is_all_digit(char *str);
-//lst utils (create node - add last )
-t_ph	*new_ph_nd(philo_inf *phil, int id_ph);
-t_ph	*last_ph(t_ph *phil);
-void	ft_lst_add_last_ph(t_ph **lst, t_ph *nw_ph);
-void    print_msg(t_ph *_ph, char *s);
-//handling time ..
+
+//function libft
+int			ft_atoi(const char *str);
+int			is_all_digit(char *str);
+//function add node ....
+void	    ft_lst_add_last_ph(t_ph **lst, t_ph *nw_ph);
+t_ph		*new_ph_nd(philo_inf *phil, int id_ph);
+t_ph		*last_ph(t_ph *phil);
+void    	print_msg(t_ph *_ph, char *s);
+//function for take the time
 long long	take_time(void);
 long long	curr_time(t_ph *phil);
-void	slp_time(long long time);
-//philo & mutex function 
-t_ph *philo_add(philo_inf *inf_ph);
-void philo_eating(t_ph *_ph);
-void philo_puts_forks(t_ph *_ph);
-void philo_take_forks(t_ph *_ph);
-void has_died(t_ph *ph);
-void has_ending_eat(t_ph *ph);
-void has_finished(t_ph *ph);
-void ph_think(t_ph *_ph);
-void *philo_routine(void *arg);
+void		slp_time(long long time);
+//parsing check input 
+int     	check_input(int ac, char **str);
+void    	take_input(philo_inf *philo, int ac, char **s);
+void    	display_error();
+int 		display_error_msg(const char *errorMessage);
+//create philo and threads
+t_ph    	*ph_add(philo_inf *info_ph);
+t_ph    	*philo_add(philo_inf *inf_ph);
+void    	philo_eating(t_ph *_ph);
+void    	philo_puts_forks(t_ph *_ph);
+void    	philo_take_forks(t_ph *_ph);
+void    	has_died(t_ph *ph);
+void    	has_ending_eat(t_ph *ph);
+void    	has_finished(t_ph *ph);
+void    	ph_think(t_ph *_ph);
+void    	*philo_routine(void *argv);
+void    	create_thrd(t_ph *philo);
+void 		freeAllMemory(t_ph *ph, philo_inf *philo);
 
 //define Print_msg arguments..
-# define ET "\e[1;35m-Start Eating 🥘-.\033[0m"
-# define TK "\e[1;32m-Start Thinking 🧘-.\033[0m"
-# define SLP "\e[1;33m-Start Sleeping 🛌-.\033[0m"
-# define DD "\e[1;31m-Died 🆘-.\033[0m"
-# define L_FORKS "\e[1;30m -THE LEFT FORK 🍴Taking-.\033[0m"
-# define R_FORKS "\e[1;30m -THE RIGHT FORK 🍴 Taking-.\033[0m"
-#define NBR_PH "\e[1;33mThe number of philosophers must be > \
-0 and < 200.\033[0m"
-#define T_DIE "\e[1;33mIt's Time for Those Over 60 to Rest.\033[0m"
-#define T_EAT "\e[1;33mSufficient Eating Time Required (More than 60).\033[0m"
-#define T_SLP "\e[1;33mAdequate Sleep Time Needed (Greater than 60).\033[0m"
-#define NBR_EAT "\e[1;33mEating Time Must Be More Than 0.\033[0m"
-
+# define ET "eating"
+# define TK "thinking"
+# define SLP "Sleeping"
+# define DD "died ☠️"
+# define L_FORKS "has taking The Left Fork"
+# define R_FORKS "has taking The Right Fork"
+#define NBR_PH "The number Of Philosophers Must Be > \
+0 and < 200."
+#define T_DIE "It's Time For Those Over 60 to Rest."
+#define T_EAT "Sufficient Eating Time Required (More than 60)."
+#define T_SLP "Adequate Sleep Time Needed (Greater than 60)."
+#define NBR_EAT "Eating Time Must Be More Than 0."
+# define MEM_ERR "Memory Allocation Failed."
 
 #endif

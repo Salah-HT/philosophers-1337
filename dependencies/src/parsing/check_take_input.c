@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_&_take_input.c                               :+:      :+:    :+:   */
+/*   check_take_input.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 15:26:17 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/13 15:26:20 by shamsate         ###   ########.fr       */
+/*   Created: 2023/09/14 17:08:18 by shamsate          #+#    #+#             */
+/*   Updated: 2023/09/17 17:22:57 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,28 @@ int check_input(int ac, char **str)
     int num_ph = ft_atoi(str[1]);
     if (num_ph < 1 || num_ph > 200 || !is_all_digit(str[1]))
     {
-        return ft_error_arg(NBR_PH);
+        return display_error_msg(NBR_PH);
     }
 
     // Check the time to die
     int t_die = ft_atoi(str[2]);
     if (t_die < 60 || !is_all_digit(str[2]))
     {
-        return ft_error_arg(T_DIE);
+        return display_error_msg(T_DIE);
     }
 
     // Check the time to eat
     int t_eat = ft_atoi(str[3]);
     if (t_eat < 60 || !is_all_digit(str[3]))
     {
-        return ft_error_arg(T_EAT);
+        return display_error_msg(T_EAT);
     }
 
     // Check the time to sleep
     int t_sleep = ft_atoi(str[4]);
     if (t_sleep < 60 || !is_all_digit(str[4]))
     {
-        return ft_error_arg(T_SLP);
+        return display_error_msg(T_SLP);
     }
 
     // If there is a 6th argument, check the number of times each philosopher must eat
@@ -48,7 +48,7 @@ int check_input(int ac, char **str)
         int num_eat = ft_atoi(str[5]);
         if (num_eat < 1 || !is_all_digit(str[5]))
         {
-            return ft_error_arg(NBR_EAT);
+            return display_error_msg(NBR_EAT);
         }
     }
 
@@ -56,7 +56,8 @@ int check_input(int ac, char **str)
 }
 
 // Function to parse command-line arguments and initialize t_inf_ph struct
-void take_input(philo_inf *philo, int ac, char **s) {
+void take_input(philo_inf *philo, int ac, char **s) 
+{
     if (ac > 4) {
         philo->nbr_ph = ft_atoi(s[1]);         // Parse and store the number of philosophers
         philo->t_die = ft_atoi(s[2]);       // Parse and store the time to die

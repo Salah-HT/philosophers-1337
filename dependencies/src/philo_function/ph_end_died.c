@@ -6,17 +6,15 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 00:32:55 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/12 01:33:39 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/23 22:06:32 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../../../include/philo.h"
 
-// Function to check if a philosopher has died
-void has_died(t_ph *ph) 
-{
-    long long current_time_value = curr_time(ph);
+void has_died(t_ph *ph) {
+    long long current_time_value = take_time(); // Get the current time in milliseconds
 
     // Calculate the time since the last meal
     long long time_since_last_meal = current_time_value - ph->final_eat;
@@ -28,8 +26,8 @@ void has_died(t_ph *ph)
             return;
 
         // Print a message indicating that the philosopher has died
-        printf("\e[0;94m%lld  THE [%d] PHILOSOPHER %s\n\033[0m", \
-            current_time_value, ph->ph_id, DD);
+        printf("\e[0;91m%30lld  %d  is %s\n\033[0m",
+            curr_time(ph), ph->ph_id, DD);
 
         // Set the 'test' flag to false, indicating that the philosopher has died
         ph->inf_ph->check = false;
@@ -38,6 +36,7 @@ void has_died(t_ph *ph)
         pthread_mutex_unlock(&ph->inf_ph->pth_lock);
     }
 }
+
 
 
 // Function to check if a philosopher has finished eating their required number of times
@@ -65,7 +64,7 @@ void has_finished(t_ph *ph)
 {
     while (true) {
         // Try to lock the eat lock
-        if (pthread_mutex_lock(&ph->final_eat) != 0)
+        if (pthread_mutex_lock(&ph->inf_ph->allow_eat) != 0)
             return;
 
         // Check if the philosopher has finished eating their required number of meals
@@ -79,7 +78,7 @@ void has_finished(t_ph *ph)
             break;
 
         // Unlock the eat lock
-        if (pthread_mutex_unlock(&ph->final_eat) != 0)
+        if (pthread_mutex_unlock(&ph->inf_ph->allow_eat) != 0)
             return;
 
         // Move to the next philosopher

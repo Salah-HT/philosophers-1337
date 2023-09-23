@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:46:49 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/11 15:47:37 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/17 16:53:04 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ int is_all_digit(char *str)
 {
     int i = 0;
 
-    if (str[i] == '+') {
+    if (str[i] == '+')
+	{
         i++;
     }
 
-    while (str[i]) {
-        if (!(str[i] >= '0' && str[i] <= '9')) {
+    while (str[i])
+	{
+        if (!(str[i] >= '0' && str[i] <= '9'))
+		{
             return 0;
         }
         i++;

@@ -6,7 +6,7 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:06:01 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/11 23:43:50 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:33:44 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void philo_eating(t_ph *_ph)
 
     // Check if the philosopher has reached the required number of meals
     if (_ph->total_eat == _ph->inf_ph->nbr_t_eat) {
-        _ph->inf_ph->stop_eat; // Increment the finish_ate counter
+        _ph->inf_ph->stop_eat++; // Increment the finish_ate counter
     }
 
     // Unlock the eating mutex to allow other philosophers to eat
@@ -38,5 +38,5 @@ void philo_eating(t_ph *_ph)
     }
 
     // Sleep for the specified time to simulate eating
-    sleep_time(_ph->inf_ph->t_die);
+    slp_time(_ph->inf_ph->t_eat);
 }

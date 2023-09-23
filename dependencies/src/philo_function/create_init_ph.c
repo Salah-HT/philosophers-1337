@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_&_init_ph.c                                 :+:      :+:    :+:   */
+/*   create_init_ph.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/11 16:08:28 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/11 23:42:57 by shamsate         ###   ########.fr       */
+/*   Created: 2023/09/13 15:52:02 by shamsate          #+#    #+#             */
+/*   Updated: 2023/09/13 15:54:08 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_ph *philo_add(philo_inf *inf_ph)
 
     // Add philosophers to the list
     while (i <= inf_ph->nbr_ph) {
-        ft_lstadd_back(&new_ph, philo_new_node(inf_ph, i++));
+        ft_lst_add_last_ph(&new_ph, new_ph_nd(inf_ph, i++));
     }
 
     // Connect the last philosopher's next pointer to the beginning to form a circular list
