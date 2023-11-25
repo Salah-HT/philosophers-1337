@@ -6,23 +6,24 @@
 /*   By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:04:53 by shamsate          #+#    #+#             */
-/*   Updated: 2023/09/20 17:07:15 by shamsate         ###   ########.fr       */
+/*   Updated: 2023/11/21 16:14:29 by shamsate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../include/philo.h"
 
 // Routine function for a philosopher's thread
-void *philo_routine(void *argv)
+void	*philo_routine(void *argv)
 {
-    t_ph *_ph = (t_ph *)argv;
+	t_ph	*_ph;
 
-    while (true) {
-        // Call the function to simulate a philosopher's actions
-        philo_take_forks(_ph);
-        philo_eating(_ph);
-        philo_puts_forks(_ph);
-        ph_think(_ph);
-    }
-    return NULL;
+	_ph = (t_ph *)argv;
+	while (true)
+	{
+		philo_take_forks(_ph);
+		philo_eating(_ph);
+		philo_puts_forks(_ph);
+		ph_think(_ph);
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 #    By: shamsate <shamsate@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 17:36:33 by shamsate          #+#    #+#              #
-#    Updated: 2023/09/23 22:04:40 by shamsate         ###   ########.fr        #
+#    Updated: 2023/11/22 23:27:01 by shamsate         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS	= -Wall -Wextra -Werror
 CC = cc
 RM = rm -Rf
 
-FILES = philo \
+FILES = philo  \
 		dependencies/utils_function/libft_utils dependencies/utils_function/take_time \
 		dependencies/utils_function/print_msg dependencies/utils_function/ft_lst_add_last_ph \
 		dependencies/src/philo_function/create_init_ph dependencies/src/philo_function/ph_eating \
@@ -52,6 +52,6 @@ fclean: clean
 	@echo "-Removing $(NAME) ..\n"
 	@echo "-Removed..✔️\n"
 
-re: fclean clean
+re: fclean all
 
 .PHONY: all clean fclean re
